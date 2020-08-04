@@ -126,6 +126,7 @@
     "test:typecheck": "tsc",
     "test": "npm run test:app",
     "test:update": "npm run test:app -- --updateSnapshot --watchAll=false",
-    "build:umd": "NODE_ENV=production webpack --config webpack.prod.config.js"
+    "build:umd": "NODE_ENV=production webpack --config webpack.prod.config.js",
+    "postinstall": "npm run build:umd"
   }
 }
