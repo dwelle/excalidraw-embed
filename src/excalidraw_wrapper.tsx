@@ -8,6 +8,7 @@ import "../public/app.css";
 import "./css/styles.scss";
 
 import { ExcalidrawProps } from "./types";
+import { IsMobileProvider } from "./is-mobile";
 
 const Excalidraw = (props: ExcalidrawProps) => {
   const {
@@ -38,16 +39,18 @@ const Excalidraw = (props: ExcalidrawProps) => {
 
   return (
     <InitializeApp>
-      <App
-        width={width}
-        height={height}
-        onChange={onChange}
-        onBlur={onBlur}
-        initialData={initialData}
-        user={user}
-        onUsernameChange={onUsernameChange}
-        options={options}
-      />
+      <IsMobileProvider>
+        <App
+          width={width}
+          height={height}
+          onChange={onChange}
+          onBlur={onBlur}
+          initialData={initialData}
+          user={user}
+          onUsernameChange={onUsernameChange}
+          options={options}
+        />
+      </IsMobileProvider>
     </InitializeApp>
   );
 };
